@@ -305,6 +305,8 @@ body {
 .header-text {
   max-width: 320px;
   text-align: left;
+  display: flex;
+  justify-content: flex-start;
   flex-shrink: 0;
 }
 
@@ -312,7 +314,9 @@ body {
 .header-content img {
   max-width: 40%;     
   height: auto;        
-  flex-shrink: 1;    
+  flex-shrink: 1;   
+  display: flex;
+  justify-content: flex-end; 
 }
 
 
