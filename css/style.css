@@ -304,9 +304,8 @@ body {
 .header-text {
   width: 100%;
   max-width: 320px;         /* keeps name from stretching */
-  text-align: center;
+  text-align: right;
   justify-self: center;
-  margin-right: 100px; 
 }
 
 .header-text h1 {
@@ -315,7 +314,6 @@ body {
   margin: 0 auto;
   padding: 0 10px;
   white-space: normal;
-   margin-right: 100px; 
 }
 
 .header-text p {
