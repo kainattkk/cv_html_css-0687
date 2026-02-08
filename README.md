@@ -8,7 +8,7 @@ It provides an interactive and modern interface for potential employers and coll
 - CSS3 (Flexbox & Responsive Design)
 
 ## Live Link
-[View the Website](https://yourusername.github.io/portfolio)
+https://cvhtmlcss-0687-3m4hzq31q-kainattkks-projects.vercel.app/
 
 ## Author
 Kainat Asghar  
