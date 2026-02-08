@@ -295,9 +295,9 @@ body {
 
   .header-content {
   grid-template-columns: 1fr;
-  justify-items: center;
-  align-items: center;      /* grid-safe */
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding-inline: 20px;
 }
 
