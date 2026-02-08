@@ -303,9 +303,9 @@ body {
 
 .header-text {
   width: 100%;
-  max-width: 320px;         /* keeps name from stretching */
+  max-width: 320px;     
   text-align: right;
-  justify-self: center;
+  justify-self: right;
 }
 
 .header-text h1 {
