@@ -293,28 +293,30 @@ body {
     padding: 0 10px;
   }
 
+  #theme-toggle,
+  #download-cv {
+    position: static;           /* remove absolute positioning */
+    display: inline-block;      /* normal flow */
+    width: auto;                /* adapt to content */
+    margin: 10px 5px;           /* spacing between buttons and header */
+    max-width: none;            /* remove fixed max-width */
+    float: right;               /* optional: keep them on the right */
+  }
+
   .header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-inline: 20px;
-  flex-wrap: wrap;
-}
+    flex-direction: column;     /* stack text and buttons/images vertically */
+    align-items: flex-start;    /* align text left */
+  }
 
-.header-text {
-  max-width: 320px;
-  text-align: left;
-  flex-shrink: 0;
-}
+  .header-text {
+    margin-bottom: 10px;        /* space below name before buttons */
+    text-align: left;
+  }
 
-
-.header-content img {
-  max-width: 40%;     
-  height: auto;        
-  flex-shrink: 1;   
-  display: flex;
-  justify-content: flex-end; 
-}
+  .header-content img {
+    max-width: 50%;             /* shrink image for small screens */
+    margin-top: 10px;
+  }
 
 
 
@@ -342,18 +344,6 @@ body {
 
   .text h1 {
     font-size: 30px;
-
-    #theme-toggle,
-#download-cv {
-  position: static;
-  width: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  max-width: 120px;
-  margin: 4px auto;
-  display: block;
-}
 
   }
 }
