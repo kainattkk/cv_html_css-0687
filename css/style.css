@@ -295,17 +295,26 @@ body {
 
   .header-content {
   display: flex;
-  flex-direction: row;       /* align items in a row */
-  justify-content: flex-start; /* text left, image right */
-  align-items: center;       /* vertically center them */
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding-inline: 20px;
+  flex-wrap: wrap;
 }
 
 .header-text {
-  max-width: 320px;          /* optional: prevent text from getting too wide */
-  text-align: left;           /* align text left instead of center */
-  flex-shrink: 0;             /* prevent it from shrinking too much */
+  max-width: 320px;
+  text-align: left;
+  flex-shrink: 0;
 }
+
+
+.header-content img {
+  max-width: 40%;     
+  height: auto;        
+  flex-shrink: 1;    
+}
+
 
 
 .header-text h1 {
