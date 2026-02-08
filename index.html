@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+<div class="cv-container">
   <!-- Header -->
   <header class="header">
   <div class="header-content">
@@ -21,6 +21,38 @@
     <img src="images/profile.jpeg" alt="Profile Photo" class="profile-img">
     </div>
   </div>
+
+  <!-- Light/Dark Mode Button -->
+    <button id="theme-toggle" style="
+      position:absolute; 
+      top:20px; 
+      right:20px; 
+      padding:8px 14px; 
+      border-radius:8px; 
+      border:none; 
+      cursor:pointer;
+      font-size:14px;
+      font-weight:500;
+      background:#815798;
+      color:#ffffff;
+      transition: all 0.3s;
+    ">🌙 Dark Mode</button>
+
+    <!-- Download CV Button -->
+<button id="download-cv" style="
+  position: absolute; 
+  top: 60px;   /* slightly below the dark mode button */
+  right: 20px; 
+  padding: 8px 14px; 
+  border-radius: 8px; 
+  border: none; 
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  background: #84798f;
+  color: #ffffff;
+  transition: all 0.3s;
+">⬇ Download CV</button>
 </header>
 
 
@@ -115,6 +147,54 @@
   <footer class="footer">
     <p>© 2026 Kainat Asghar. All Rights Reserved.</p>
   </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const toggle = document.getElementById("theme-toggle");
+  const downloadBtn = document.getElementById("download-cv");
+  const body = document.body;
+
+  /* -------- Dark / Light Mode -------- */
+  toggle.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+      toggle.textContent = "☀️ Light Mode";
+      toggle.style.background = "#cb8bee";
+      downloadBtn.style.background = "#53485d";
+    } else {
+      toggle.textContent = "🌙 Dark Mode";
+      toggle.style.background = "#815798";
+      downloadBtn.style.background = "#84798f";
+    }
+  });
+
+  /* -------- Download CV -------- */
+  downloadBtn.addEventListener("click", () => {
+    const element = document.querySelector(".cv-container");
+
+    if (!element) {
+      alert("CV container not found!");
+      return;
+    }
+
+    const opt = {
+      margin: 0.3,
+      filename: "Kainat_Asghar_CV.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: "in", format: "a4", orientation: "portrait" }
+    };
+
+    html2pdf().set(opt).from(element).save();
+  });
+
+});
+</script>
+</div>
 
 </body>
 </html>

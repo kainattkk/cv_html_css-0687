@@ -1,4 +1,52 @@
+/* --------------------
+   CSS Variables
+--------------------- */
+:root {
+  --bg-color: #c0b0cf;
+  --text-color: #333;
+  --header-bg: linear-gradient(135deg, #ba7fd1, #89d0c2);
+  --header-text: #fff;
+  --section-bg: #aae1d8;
+  --section-hover-bg: #89d4c7;
+  --section-title-color: #453e75;
+  --list-bullet-color: #39326a;
+  --skills-bg: #9475b5;
+  --skills-hover-bg: rgb(210, 175, 247);
+  --link-color: #8c2ea6;
+  --link-hover-color: #d84cff;
+  --footer-color: #777;
+  --profile-border: rgba(255, 255, 255, 0.8);
+  --profile-hover-border: rgba(166, 119, 247, 0.8);
+  --button-bg: #fff;
+  --button-color: #333;
+}
 
+/* --------------------
+   Dark Mode Variables
+--------------------- */
+body.dark-mode {
+  --bg-color: #1e1c28;
+  --text-color: #e0e0e0;
+  --header-bg: linear-gradient(135deg, #6a3f91, #35776f);
+  --header-text: #fff;
+  --section-bg: #2c2a3a;
+  --section-hover-bg: #3b3650;
+  --section-title-color: #c2bfe0;
+  --list-bullet-color: #a29fc0;
+  --skills-bg: #593c7c;
+  --skills-hover-bg: #8760a8;
+  --link-color: #b36bdb;
+  --link-hover-color: #e69cff;
+  --footer-color: #aaa;
+  --profile-border: rgba(255, 255, 255, 0.3);
+  --profile-hover-border: rgba(180, 140, 220, 0.8);
+  --button-bg: #333;
+  --button-color: #fff;
+}
+
+/* --------------------
+   Global Reset & Base
+--------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -7,16 +55,22 @@
 }
 
 body {
-  background: #c0b0cf;
-  color: #333;
+  background: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
+  transition: all 0.3s ease;
 }
 
+/* --------------------
+   Header
+--------------------- */
 .header {
-  background: linear-gradient(135deg, #ba7fd1, #89d0c2);
+  background: var(--header-bg);
   padding: 60px 60px;
   border-radius: 0 0 40px 40px;
-  color: #fff;
+  color: var(--header-text);
+  position: relative; /* for dark mode button */
+  transition: background 0.3s ease;
 }
 
 .header-content {
@@ -26,22 +80,17 @@ body {
   width: 100%;
 }
 
-.header-content .text{
-    margin-right: 450px;
-    text-align: center;
-    margin-left: 120px;
-
-
+.header-content .text {
+  margin-right: 450px;
+  text-align: center;
+  margin-left: 120px;
 }
 
-.header-content .profile{
-    margin-left: 200px;
+.header-content .profile {
+  margin-left: 200px;
+  margin-right: 100px;
 }
 
-.header-content {
-    display: flex;
-    justify-content: flex-start;
-} 
 .text {
   text-align: left;
   display: flex;
@@ -54,71 +103,71 @@ body {
   font-weight: 700;
   letter-spacing: 1px;
   line-height: 1.2;
+  transition: all 0.3s ease;
 }
 
-.text h1:hover
-{
-    transform: scale(1.1);
-    color: #7dded4;
-    text-shadow: 0 0 5px rgba(82, 242, 228, 0.7);
+.text h1:hover {
+  transform: scale(1.1);
+  color: #7dded4;
+  text-shadow: 0 0 5px rgba(82, 242, 228, 0.7);
 }
 
 .text p {
   font-size: 16px;
   margin-top: 6px;
   opacity: 0.85;
+  transition: all 0.3s ease;
 }
 
-.text p:hover
-{
-    transform: scale(1.1);
-    color: #7dded4;
-    text-shadow: 0 0 5px rgba(82, 242, 228, 0.7);
+.text p:hover {
+  transform: scale(1.1);
+  color: #7dded4;
+  text-shadow: 0 0 5px rgba(82, 242, 228, 0.7);
 }
 
 .profile {
-  display: flex;           
-  align-items: center;  
+  display: flex;
+  align-items: center;
 }
 
 .profile-img {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  border: 3px solid rgba(255, 255, 255, 0.8);
+  border: 3px solid var(--profile-border);
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, border 0.3s ease;
 }
 
 .profile-img:hover {
   transform: scale(1.1);
-  border: 3px solid rgba(166, 119, 247, 0.8);
+  border: 3px solid var(--profile-hover-border);
 }
 
 /* --------------------
    Sections
 --------------------- */
 .section {
-  background: #aae1d8;
+  background: var(--section-bg);
   max-width: 1200px;
   margin: 30px auto;
   padding: 30px 40px;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
 }
 
 .section:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-  background: #89d4c7;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  background: var(--section-hover-bg);
 }
 
 .section h2 {
   font-size: 24px;
-  color: #453e75;
+  color: var(--section-title-color);
   margin-bottom: 15px;
-  border-bottom: 2px solid #453e75;
+  border-bottom: 2px solid var(--section-title-color);
   display: inline-block;
   padding-bottom: 4px;
 }
@@ -135,15 +184,16 @@ body {
 }
 
 .section ul li::before {
+  content: "•";
   position: absolute;
   left: 0;
-  color: #39326a;
+  color: var(--list-bullet-color);
   font-size: 18px;
 }
 
 .section ul ul li {
   font-size: 14.5px;
-  color: #555;
+  color: #bbb;
 }
 
 /* --------------------
@@ -158,25 +208,25 @@ body {
 }
 
 .skills-list li {
-  background: #9475b5;
+  background: var(--skills-bg);
   color: #fff;
   padding: 6px 16px;
   border-radius: 25px;
   font-size: 14px;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, background 0.3s ease;
 }
 
 .skills-list li:hover {
   transform: scale(1.1);
-  background-color: rgb(210, 175, 247);
+  background-color: var(--skills-hover-bg);
 }
 
 /* --------------------
-   Projects
+   Projects & Contact
 --------------------- */
 .project h3 {
   margin-top: 15px;
-  color: #2d3436;
+  color: var(--text-color);
 }
 
 .project ul {
@@ -188,19 +238,19 @@ body {
 }
 
 #contact a {
-  color: #8c2ea6;
+  color: var(--link-color);
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 #contact a:hover {
-  color: #d84cff;
+  color: var(--link-hover-color);
   text-decoration: underline;
 }
 
 .extracurriculars-list h3 {
   margin-top: 10px;
-  color: #2d3436;
+  color: var(--text-color);
 }
 
 .footer {
@@ -208,13 +258,39 @@ body {
   padding: 18px;
   margin-top: 20px;
   font-size: 14px;
-  color: #777;
+  color: var(--footer-color);
 }
 
+/* --------------------
+   Dark Mode Button
+--------------------- */
+#theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  background: var(--button-bg);
+  color: var(--button-color);
+  transition: all 0.3s;
+}
+
+#theme-toggle:hover {
+  opacity: 0.85;
+}
+
+/* --------------------
+   Responsive Design
+--------------------- */
 @media (max-width: 768px) {
   .header-content {
     text-align: center;
     align-items: center;
+    flex-direction: column;
   }
 
   .profile-img {
@@ -228,5 +304,17 @@ body {
 
   .text h1 {
     font-size: 30px;
+  }
+}
+
+#theme-toggle,
+#download-cv {
+  z-index: 1000;
+}
+
+@media print {
+  #theme-toggle,
+  #download-cv {
+    display: none;
   }
 }
