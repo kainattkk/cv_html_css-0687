@@ -293,32 +293,33 @@ body {
     padding: 0 10px;
   }
 
-  .header-text {
-    text-align: center;
-    justify-self: center;
-    max-width: 100%;
-  }
-
-
-  .header-text h1 {
-    font-size: 28px;
-    line-height: 1.2;
-    word-break: break-word;
-    padding: 0 10px;
-  }
-
-  .header-text h1 {
-    max-width: 320px;
-    margin: 0 auto;
-  }
-
-
-
   .header-content {
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
-  }
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;      /* grid-safe */
+  text-align: center;
+  padding-inline: 20px;
+}
+
+.header-text {
+  width: 100%;
+  max-width: 320px;         /* keeps name from stretching */
+  text-align: center;
+  justify-self: center;
+}
+
+.header-text h1 {
+  font-size: 26px;
+  line-height: 1.25;
+  margin: 0 auto;
+  padding: 0 10px;
+  white-space: normal;
+}
+
+.header-text p {
+  margin-top: 6px;
+  text-align: center;
+}
 
   .profile-img {
     margin-top: 15px;
