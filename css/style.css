@@ -295,7 +295,6 @@ body {
 
   .header-content {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding-inline: 20px;
@@ -305,8 +304,6 @@ body {
 .header-text {
   max-width: 320px;
   text-align: left;
-  display: flex;
-  justify-content: flex-start;
   flex-shrink: 0;
 }
 
