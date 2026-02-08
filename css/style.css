@@ -61,6 +61,8 @@ body {
   transition: all 0.3s ease;
 }
 
+
+
 /* --------------------
    Header
 --------------------- */
@@ -192,7 +194,7 @@ body {
 
 .section ul ul li {
   font-size: 14.5px;
-  color: #bbb;
+  color: #626060;
 }
 
 /* --------------------
@@ -286,6 +288,11 @@ body {
    Responsive Design
 --------------------- */
 @media (max-width: 768px) {
+
+   .cv-container {
+    padding: 0 10px;
+  }
+
   .header-content {
     text-align: center;
     align-items: center;
@@ -303,6 +310,16 @@ body {
 
   .text h1 {
     font-size: 30px;
+
+    #theme-toggle,
+#download-cv {
+  position: static;
+  width: 100%;
+  max-width: 220px;
+  margin: 8px auto;
+  display: block;
+}
+
   }
 }
 
@@ -321,3 +338,37 @@ body {
 .hide-for-pdf {
   display: none !important;
 }
+
+#theme-toggle,
+#download-cv {
+  position: absolute;
+  right: 20px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+#theme-toggle {
+  top: 20px;
+  background: #815798;
+  color: #fff;
+}
+
+#download-cv {
+  top: 60px;
+  background: #84798f;
+  color: #fff;
+}
+
+a {
+  word-break: break-word;
+}
+
+body {
+  overflow-x: hidden;
+}
+
