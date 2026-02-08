@@ -318,3 +318,7 @@ body {
     display: none;
   }
 }
+
+.hide-for-pdf {
+  display: none !important;
+}
