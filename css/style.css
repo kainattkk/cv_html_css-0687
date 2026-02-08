@@ -296,7 +296,7 @@ body {
   .header-content {
   grid-template-columns: 1fr;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   padding-inline: 20px;
 }
