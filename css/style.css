@@ -336,9 +336,9 @@ body {
     #theme-toggle,
 #download-cv {
   position: static;
-  width: 100%;
-  max-width: 220px;
-  margin: 8px auto;
+  width: 50%;
+  max-width: 120px;
+  margin: 4px auto;
   display: block;
 }
 
